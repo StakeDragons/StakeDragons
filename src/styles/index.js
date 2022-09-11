@@ -88,8 +88,7 @@ export default makeStyles(() => ({
     textAlign: 'left',
   },
   inventoryContainer: {
-    height: `calc(100vh - 120px)`,
-    alignItems: 'center',
+    height: '100%',
   },
   goldBox4: {
     border: `4px solid ${COLORS.SMOOTH_YELLOW_30}`,

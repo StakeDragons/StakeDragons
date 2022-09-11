@@ -10,6 +10,8 @@ import inventorySelected from 'assets/drawer/inventory-selected.svg'
 import marketSelected from 'assets/drawer/market-selected.svg'
 import stakeSelected from 'assets/drawer/stake-selected.svg'
 import dragondropSelected from 'assets/drawer/dragondrop-selected.svg'
+import dashboard from 'assets/drawer/dashboard.svg'
+import dashboardSelected from 'assets/drawer/dashboard-selected.svg'
 
 export const DRAWER_ITEMS = [
   {
@@ -47,5 +49,11 @@ export const DRAWER_ITEMS = [
     image: market,
     selected: marketSelected,
     link: '/market',
+  },
+  {
+    text: 'Dashboard',
+    image: dashboard,
+    selected: dashboardSelected,
+    link: '/dashboard',
   },
 ]

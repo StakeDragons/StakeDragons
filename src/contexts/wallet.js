@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { createClient } from 'services/keplr'
 import { getConfig } from 'config/network'
+import Cw20DRGN from '../contracts/cw20-drgn'
 
 function throwNotInitialized() {
   throw new Error('Oops! Need to connect your Keplr Wallet first.')
@@ -13,7 +14,7 @@ const defaultContext = {
   clear: throwNotInitialized,
   address: '',
   name: '',
-  balance: [],
+  balance: [{ juno: 0 }, { junox: 0 }, { drgn: 0 }],
   refreshBalance: throwNotInitialized,
   getClient: throwNotInitialized,
   getSigner: throwNotInitialized,
@@ -54,7 +55,9 @@ export function WalletProvider({ children, network, setNetwork }) {
       const coin = await client.getBalance(address, denom)
       if (coin) balance.push(coin)
     }
-
+    const client2 = Cw20DRGN(client)
+    let res = await client2.getBalance(address)
+    balance.push({ denom: 'DRGN', amount: res.balance / 1000000 })
     setValue({ ...value, balance })
   }
 
@@ -68,7 +71,6 @@ export function WalletProvider({ children, network, setNetwork }) {
         const client = await createClient(signer, network)
         setClient(client)
       } catch (error) {
-        console.error(error)
       }
     }
     if (signer) {

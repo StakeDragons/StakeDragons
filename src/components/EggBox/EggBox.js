@@ -1,9 +1,8 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import EggSvg from 'assets/egg.svg'
 import useStyles from 'styles'
 
-const EggBox = ({ styles }) => {
+const EggBox = ({ styles, img }) => {
   const classes = useStyles()
 
   return (
@@ -15,7 +14,7 @@ const EggBox = ({ styles }) => {
         ...styles,
       }}
     >
-      <img src={EggSvg} alt="Egg Svg" style={{ maxWidth: '300px' }} />
+      <img src={img} alt="Egg Svg" style={{ maxWidth: '300px' }} />
     </Box>
   )
 }

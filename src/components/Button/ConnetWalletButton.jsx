@@ -18,6 +18,7 @@ const ConnectWalletButton = (props) => {
   const classes = useStyles()
 
   const [junoBalance, setJunoBalance] = useState(0)
+  const [drgnBalance, setDrgnBalance] = useState(0)
 
   const copyWalletAddress = () => {
     navigator.clipboard.writeText(wallet.address)
@@ -36,6 +37,9 @@ const ConnectWalletButton = (props) => {
         balances.forEach((item) => {
           if (item.denom === 'ujuno') {
             setJunoBalance(Number(item.amount / 1000000))
+          }
+          if (item.denom === 'DRGN') {
+            setDrgnBalance(Number(item.amount))
           }
         })
       }
@@ -70,7 +74,7 @@ const ConnectWalletButton = (props) => {
       </Box>
       <Typography textAlign={'left'}>{AddressPipe(wallet.address)}</Typography>
       <Typography textAlign={'left'}>
-        {walletBalancePipe(junoBalance) + ' Juno / x.xx DRGN'}
+        {walletBalancePipe(junoBalance) + ' Juno / ' + walletBalancePipe(drgnBalance) + ' DRGN'}
       </Typography>
     </Box>
   ) : (

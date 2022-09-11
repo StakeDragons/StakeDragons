@@ -20,3 +20,26 @@ h6 {
 .fontAwesome {
   font-family: 'Helvetica', FontAwesome, sans-serif;
 }
+::-webkit-scrollbar {
+  width: .75em;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(217, 174, 106);
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(217, 174, 106, .8);
+}
+
+.SnackbarContainer-top {
+  top: 160px !important;
+}

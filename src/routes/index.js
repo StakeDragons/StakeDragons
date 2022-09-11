@@ -10,9 +10,10 @@ import Eggsale from 'pages/Eggsale'
 import Inventory from 'pages/Inventory'
 import Hatching from 'pages/Hatching'
 import Stake from 'pages/Stake'
-import Market from 'pages/Market'
-// import { BuyDragon } from 'pages/Market'
-// import { BuyEgg } from 'pages/Market'
+import Dashboard from 'pages/Dashboard'
+import { Market } from 'pages/Market'
+import { BuyDragon } from 'pages/Market'
+//import { BuyEgg } from 'pages/Market'
 
 const routes = () => (
   <Router>
@@ -25,9 +26,10 @@ const routes = () => (
         <Route exact path="/hatching" component={Hatching} />
         <Route exact path="/stake" component={Stake} />
         <Route exact path="/market" component={Market} />
-        {/* <Route exact path="/buy-dragon" component={BuyDragon} />
-        <Route exact path="/buy-egg" component={BuyEgg} /> */}
+        <Route path="/buy-dragon" component={BuyDragon} />
+        {/* <Route path="/buy-egg" component={BuyEgg} /> */}
         <Route exact path="/dragondrop" component={Dragondrop} />
+        <Route exact path="/dashboard" component={Dashboard} />
         <Redirect to="/" />
       </Switch>
     </Layout>

@@ -8,6 +8,7 @@ import { WalletProvider } from 'contexts/wallet'
 import { ContractsProvider } from 'contexts/contract'
 import { NETWORK } from 'util/constants'
 import { useKeplr } from 'services/keplr'
+import bgOuter from 'assets/bg2.png'
 
 const SideEffects = () => {
   const keplr = useKeplr()
@@ -37,6 +38,8 @@ const Layout = ({ children }) => {
         overflow: 'hidden',
         flexDirection: 'column',
         backgroundColor: location.pathname !== '/' && COLORS.DARK_BLACK_1,
+        backgroundImage: location.pathname !== '/' && `url(${bgOuter})`,
+        backgroundBlendMode: location.pathname !== '/' && 'soft-light',
       }}
     >
       <WalletProvider network={network} setNetwork={setNetwork}>

@@ -7,7 +7,13 @@ const AppStoreButton = () => {
 
   return (
     // Just an image for now since the url will be provided later.
-    <img className={classes.root} src={AppStoreSvg} alt="appstore" />
+    <a
+      href="https://apps.apple.com/tr/app/stake-dragons/id1632278384?l=tr"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img className={classes.root} src={AppStoreSvg} alt="appstore" />
+    </a>
   )
 }
 

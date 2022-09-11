@@ -23,6 +23,11 @@ export async function loadKeplrWallet(config) {
   }
 
   await anyWindow.keplr.experimentalSuggestChain(keplrConfig(config))
+  await anyWindow.keplr.suggestToken(
+    'juno-1',
+    'juno147t4fd3tny6hws6rha9xs5gah9qa6g7hrjv9tuvv6ce6m25sy39sq6yv52',
+    'juno147t4fd3tny6hws6rha9xs5gah9qa6g7hrjv9tuvv6ce6m25sy39sq6yv52',
+  )
   await anyWindow.keplr.enable(config.chainId)
 
   const signer = await anyWindow.getOfflineSignerAuto(config.chainId)

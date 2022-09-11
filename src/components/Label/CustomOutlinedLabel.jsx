@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Grid } from '@mui/material'
 
 import useStyles from 'styles'
 
-const CustomOutlinedLabel = ({ title, amount, unit, styles }) => {
+const CustomOutlinedLabel = ({ title, amount, unit, styles, textStyles }) => {
   const classes = useStyles()
 
   return (
@@ -14,10 +14,14 @@ const CustomOutlinedLabel = ({ title, amount, unit, styles }) => {
         ...styles,
       }}
     >
-      <Typography className={classes.body1Grey}>{title}:</Typography>
-      <Typography className={classes.body1}>
-        {amount} {unit}
-      </Typography>
+      <Grid flexDirection={'column'}>
+        <Typography className={classes.body1Grey} sx={{ ...textStyles }}>
+          {title}
+        </Typography>
+        <Typography className={classes.body1} sx={{ ...textStyles }}>
+          {amount} {unit}
+        </Typography>
+      </Grid>
     </Box>
   )
 }

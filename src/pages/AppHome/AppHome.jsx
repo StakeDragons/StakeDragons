@@ -1,20 +1,29 @@
 import React from 'react'
-import { Box, Grid, Typography } from '@mui/material'
-import { Logo } from 'components/Logo'
+import { useHistory } from 'react-router-dom'
+import { Box, Grid } from '@mui/material'
 import useStyles from 'styles'
+
+import title from 'assets/title2.png'
+import logo from 'assets/logo.svg'
 
 const AppHome = () => {
   const classes = useStyles()
+  const history = useHistory()
 
   return (
     <Box className={[classes.pageContainer, classes.displayFlex]}>
       <Grid item>
-        <Logo />
+        <img
+          className={classes.root}
+          src={logo}
+          alt="logo"
+          onClick={() => history.push('/')}
+          width={'150px'}
+          height={'150px'}
+        />
       </Grid>
       <Grid item marginTop={'3rem'}>
-        <Typography className={classes.h1} sx={{ fontSize: '40px' }}>
-          Stake Dragons
-        </Typography>
+        <img src={title} alt="Stake Dragons" height="250px" width="auto" />
       </Grid>
     </Box>
   )

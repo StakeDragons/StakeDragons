@@ -6,8 +6,13 @@ const GooglePlayButton = () => {
   const classes = useStyles()
 
   return (
-    // Just an image for now since the url will be provided later.
+    <a
+    href="https://play.google.com/store/apps/details?id=com.PurpleBlueLab.StakeDragons"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <img className={classes.root} src={GooglePlaySvg} alt="googleplay" />
+  </a>
   )
 }
 
